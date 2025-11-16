@@ -66,7 +66,7 @@ function openProduct(product) {
   modalImage.src = product.image;
   modalTitle.textContent = product.title;
   modalDesc.textContent = product.description;
-  modalPrice.textContent = "Price: ₹" + product.price;
+  modalPrice.textContent = "Price: $" + product.price;
 }
 
 closeModal.onclick = () => modal.style.display = "none";
@@ -124,3 +124,4 @@ themeToggle.onclick = () => {
     themeToggle.textContent = "🌙";
   }
 };
+
