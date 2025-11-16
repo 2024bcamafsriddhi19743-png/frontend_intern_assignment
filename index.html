@@ -9,30 +9,28 @@
 <body>
 
   <header>
-    <h1>Mini Product Dashboarder></h1>
+    <h1>Mini Product Dashboarder</h1>
   </header>
-
 
   <!-- FILTERS -->
   <div class="filters">
-    <!-- THEME -->
     <button id="themeToggle">🌙</button>
-    
-    <!-- SEARCH -->
+
+    <button id="showFavorites" class="fav-page-btn">❤️ Favorites</button>
+    <button id="showCart" class="cart-page-btn">🛒 Cart <span id="cartCount" class="badge">0</span></button>
+    <button id="showAll" class="all-page-btn" style="display:none;">⬅ All Products</button>
+
     <input type="text" id="search" placeholder="Search products...">
 
-    <!-- CATEGORY DROPDOWN -->
     <select id="categoryFilter">
       <option value="all">All Categories</option>
     </select>
 
-    <!-- SORT DROPDOWN--> 
     <select id="sortFilter">
       <option value="none">Sort By</option>
       <option value="low">Price: Low → High</option>
       <option value="high">Price: High → Low</option>
     </select>
-
   </div>
 
   <!-- LOADING TEXT -->
@@ -41,14 +39,43 @@
   <!-- PRODUCT GRID -->
   <div class="wrapper"></div>
 
-  <!-- MODAL -->
+  <!-- MODAL (product detail + variants + add to cart) -->
   <div id="productModal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <span id="closeModal">&times;</span>
-      <img id="modalImage">
-      <h2 id="modalTitle"></h2>
-      <p id="modalDesc"></p>
-      <h3 id="modalPrice"></h3>
+
+      <div class="modal-grid">
+        <div class="modal-image-wrapper">
+          <img id="modalImage" alt="product image">
+        </div>
+
+        <div class="modal-info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+
+          <div class="modal-row">
+            <label for="variantSize">Size</label>
+            <select id="variantSize"></select>
+          </div>
+
+          <div class="modal-row">
+            <label for="variantColor">Color</label>
+            <select id="variantColor"></select>
+          </div>
+
+          <div class="modal-row qty-row">
+            <label for="qtySelector">Quantity</label>
+            <input type="number" id="qtySelector" min="1" value="1">
+          </div>
+
+          <h3 id="modalPrice"></h3>
+
+          <div class="modal-actions">
+            <button id="addToCartBtn" class="add-cart-btn">Add to Cart</button>
+            <button id="favModalBtn" class="fav-modal-btn">🤍</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
