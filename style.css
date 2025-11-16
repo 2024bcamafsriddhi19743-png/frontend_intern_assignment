@@ -1,0 +1,169 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body {
+  background:#f7f7f7;
+}
+
+/* HEADER */
+header {
+  background:#222;
+  padding:20px;
+  text-align:center;
+}
+header h1 {
+  color:rgb(252, 250, 250);
+}
+
+/* FILTERS */
+.filters {
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  padding:20px;
+  background:white;
+  flex-wrap:wrap;
+}
+.filters input,
+.filters select {
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #aaa;
+  min-width:180px;
+}
+
+/* LOADING */
+#loading {
+  text-align:center;
+  margin-top:40px;
+  font-size:22px;
+  display:none;
+}
+
+/* PRODUCT GRID */
+.wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:25px;
+  gap:20px;
+}
+
+.products {
+  width:260px;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  text-align:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+.products:hover {
+  transform:scale(1.05);
+}
+
+.products img {
+  width:180px;
+  height:180px;
+  object-fit:contain;
+}
+
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(4px);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:350px;
+  text-align:center;
+  animation:pop 0.3s;
+}
+
+.modal-content img {
+  width:250px;
+  height:250px;
+  object-fit:contain;
+}
+
+#closeModal {
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+@keyframes pop {
+  from { transform:scale(0.7); opacity:0; }
+  to { transform:scale(1); opacity:1; }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .products {
+    width:90%;
+  }
+}
+
+/* THEME TOGGLE BUTTON */
+#themeToggle {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* SMOOTH TRANSITION */
+body, header, .filters, .products, .modal-content {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* DARK MODE */
+.dark body {
+  background: #121212;
+  color: #eee;
+}
+
+.dark header {
+  background: #000;
+}
+
+.dark .filters {
+  background: #1f1f1f;
+}
+
+.dark .filters input,
+.dark .filters select {
+  background: #2b2b2b;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.dark .products {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.dark .modal-content {
+  background: #1c1c1c;
+  color: #fff;
+}
+

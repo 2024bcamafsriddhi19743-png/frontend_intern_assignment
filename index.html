@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Commerce Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Mini Product Dashboarder></h1>
+  </header>
+
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <!-- THEME -->
+    <button id="themeToggle">🌙</button>
+    
+    <!-- SEARCH -->
+    <input type="text" id="search" placeholder="Search products...">
+
+    <!-- CATEGORY DROPDOWN -->
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+
+    <!-- SORT DROPDOWN--> 
+    <select id="sortFilter">
+      <option value="none">Sort By</option>
+      <option value="low">Price: Low → High</option>
+      <option value="high">Price: High → Low</option>
+    </select>
+
+  </div>
+
+  <!-- LOADING TEXT -->
+  <div id="loading">Loading products...</div>
+
+  <!-- PRODUCT GRID -->
+  <div class="wrapper"></div>
+
+  <!-- MODAL -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <img id="modalImage">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <h3 id="modalPrice"></h3>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
